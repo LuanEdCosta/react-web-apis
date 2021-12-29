@@ -1,0 +1,34 @@
+{
+  "name": "react-web-apis",
+  "description": "Testing Web APIs With React",
+  "version": "1.0.0",
+  "license": "MIT",
+  "source": "src/index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "test": "jest",
+    "dev": "parcel",
+    "serve": "serve dist",
+    "build": "parcel build",
+    "clean": "rimraf .parcel-cache dist",
+    "prettier:all": "prettier --write .",
+    "prettier:src": "prettier --write src"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.2.1"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "autoprefixer": "^10.4.0",
+    "parcel": "^2.0.1",
+    "postcss": "^8.4.5",
+    "prettier": "^2.5.1",
+    "rimraf": "^3.0.2",
+    "serve": "^13.0.2",
+    "tailwindcss": "^3.0.8",
+    "typescript": "^4.5.4"
+  }
+}
