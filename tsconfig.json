@@ -1,11 +1,15 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
+    "baseUrl": ".",
     "target": "ESNext",
     "jsx": "preserve",
     "module": "esnext",
     "moduleResolution": "node",
     "lib": ["dom", "dom.iterable", "esnext"],
+    "paths": {
+      "~/*": ["./*"],
+      "src/*": ["./src/*"]
+    },
     "strict": true,
     "noEmit": true,
     "allowJs": true,

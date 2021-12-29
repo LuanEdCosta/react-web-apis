@@ -8,8 +8,11 @@
     "name": "Luan Eduardo da Costa",
     "url": "https://github.com/LuanEdCosta"
   },
-  "source": "src/index.html",
   "browserslist": "> 0.5%, last 2 versions, not dead",
+  "source": "src/index.html",
+  "alias": {
+    "src": "./src"
+  },
   "scripts": {
     "test": "jest",
     "dev": "parcel",
