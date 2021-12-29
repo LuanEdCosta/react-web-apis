@@ -1,8 +1,13 @@
 {
   "name": "react-web-apis",
-  "description": "Testing Web APIs With React",
+  "description": "Testing Web APIs With React + TypeScript + Tailwind + Parcel",
+  "private": true,
   "version": "1.0.0",
   "license": "MIT",
+  "author": {
+    "name": "Luan Eduardo da Costa",
+    "url": "https://github.com/LuanEdCosta"
+  },
   "source": "src/index.html",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
