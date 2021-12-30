@@ -1,0 +1,8 @@
+.header-react-logo {
+  animation-duration: 3s !important;
+}
+
+.home-link {
+  min-height: 8rem;
+  min-width: 16rem;
+}
