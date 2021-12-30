@@ -1,16 +1,14 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-import { HomePage } from 'src/modules/Home'
-import { PageVisibilityPage } from 'src/modules/PageVisibility'
-import { ResizeObserverPage } from 'src/modules/ResizeObserver'
+import { Home, PageVisibility, ResizeObserver } from 'src/pages'
 
 export const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/page-visibility" element={<PageVisibilityPage />} />
-        <Route path="/resize-observer" element={<ResizeObserverPage />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/page-visibility" element={<PageVisibility />} />
+        <Route path="/resize-observer" element={<ResizeObserver />} />
       </Routes>
     </BrowserRouter>
   )
