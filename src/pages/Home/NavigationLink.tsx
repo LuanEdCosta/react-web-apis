@@ -17,7 +17,7 @@ export const NavigationLink: React.FC<NavigationLinkProps> = ({
   return (
     <Link
       to={to}
-      className={`relative border-2 border-gray-300 hover:border-purple-600 hover:text-purple-600 transition rounded-xl ${className}`}
+      className={`relative bg-white border-2 border-gray-300 hover:border-purple-600 hover:text-purple-600 transition rounded-xl ${className}`}
     >
       <FiExternalLink className="absolute top-4 right-4" />
       <div className="py-6 px-4 pr-10">
