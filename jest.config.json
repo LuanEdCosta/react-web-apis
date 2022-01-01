@@ -5,6 +5,6 @@
   "coverageProvider": "v8",
   "testEnvironment": "jsdom",
   "coverageDirectory": "coverage",
-  "moduleDirectories": ["node_modules", "."],
-  "setupFilesAfterEnv": ["<rootDir>/setupTests.ts"]
+  "setupFilesAfterEnv": ["<rootDir>/setupTests.ts"],
+  "moduleDirectories": ["node_modules", "<rootDir>/node_modules", "."]
 }

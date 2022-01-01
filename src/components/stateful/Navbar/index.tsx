@@ -1,9 +1,8 @@
+import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { FiArrowLeft, FiGlobe, FiSun, FiMoon, FiGithub } from 'react-icons/fi'
 
 import { Button, IconButton } from 'src/components'
-import { useGoBack } from 'src/hooks'
-
 export interface NavbarProps {
   className?: string
   showBackButton?: boolean
@@ -14,7 +13,11 @@ export const Navbar: React.FC<NavbarProps> = ({
   showBackButton = true,
 }) => {
   const { t } = useTranslation('Common')
-  const { handleGoBack } = useGoBack()
+  const navigate = useNavigate()
+
+  const handleGoBack = () => {
+    navigate(-1)
+  }
 
   const handleChangeTheme = () => {
     // TODO
