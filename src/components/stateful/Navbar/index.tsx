@@ -30,7 +30,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     <nav className={`flex items-center h-14 ${className}`}>
       <div className="flex-1">
         {showBackButton && (
-          <Button onClick={handleGoBack}>
+          <Button onClick={handleGoBack} data-testid="navbar-back-button">
             <FiArrowLeft />
             <span className="ml-2">{t('goBack')}</span>
           </Button>
@@ -42,20 +42,27 @@ export const Navbar: React.FC<NavbarProps> = ({
       <div className="flex items-center space-x-2">
         <a
           href="https://github.com/LuanEdCosta/react-web-apis"
+          data-testid="navbar-github-button"
           referrerPolicy="no-referrer"
-          target="_blank"
           rel="noreferrer"
+          target="_blank"
         >
           <IconButton>
             <FiGithub className="text-xl" />
           </IconButton>
         </a>
 
-        <IconButton onClick={handleChangeLanguage}>
+        <IconButton
+          onClick={handleChangeLanguage}
+          data-testid="navbar-language-button"
+        >
           <FiGlobe className="text-xl" />
         </IconButton>
 
-        <IconButton onClick={handleChangeTheme}>
+        <IconButton
+          onClick={handleChangeTheme}
+          data-testid="navbar-theme-button"
+        >
           {isDarkMode ? (
             <FiSun className="text-xl" />
           ) : (

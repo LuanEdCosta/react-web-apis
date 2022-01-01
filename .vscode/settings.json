@@ -1,4 +1,4 @@
 {
-  "cSpell.words": ["browserslist", "tailwindcss"],
+  "cSpell.words": ["browserslist", "tailwindcss", "testid"],
   "css.lint.unknownAtRules": "ignore"
 }

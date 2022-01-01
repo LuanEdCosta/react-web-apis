@@ -14,7 +14,7 @@
     "src": "./src"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --no-cache",
     "dev": "parcel",
     "serve": "serve dist",
     "build": "parcel build",
