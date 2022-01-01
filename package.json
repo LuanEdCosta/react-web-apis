@@ -19,8 +19,8 @@
     "serve": "serve dist",
     "build": "parcel build",
     "clean": "rimraf .parcel-cache dist",
-    "prettier:all": "prettier --write .",
-    "prettier:src": "prettier --write src"
+    "eslint:lint": "yarn eslint src --ext .js,.jsx,.ts,.tsx",
+    "eslint:fix": "yarn eslint src --ext .js,.jsx,.ts,.tsx --fix"
   },
   "dependencies": {
     "i18next": "^21.6.4",
@@ -37,8 +37,15 @@
     "@types/jest": "^27.0.3",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
     "autoprefixer": "^10.4.0",
     "babel-jest": "^27.4.5",
+    "eslint": "^8.6.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "jest": "^27.4.5",
     "parcel": "^2.0.1",
     "postcss": "^8.4.5",

@@ -1,5 +1,4 @@
-export interface IconButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+export type IconButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>
 
 export const IconButton: React.FC<IconButtonProps> = ({
   className,

@@ -16,8 +16,13 @@ export const Navbar: React.FC<NavbarProps> = ({
   const { t } = useTranslation('Common')
   const { handleGoBack } = useGoBack()
 
-  const handleChangeTheme = () => {}
-  const handleChangeLanguage = () => {}
+  const handleChangeTheme = () => {
+    // TODO
+  }
+
+  const handleChangeLanguage = () => {
+    // TODO
+  }
 
   const isDarkMode = false
 
@@ -39,6 +44,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           href="https://github.com/LuanEdCosta/react-web-apis"
           referrerPolicy="no-referrer"
           target="_blank"
+          rel="noreferrer"
         >
           <IconButton>
             <FiGithub className="text-xl" />

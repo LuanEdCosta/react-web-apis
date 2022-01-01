@@ -19,6 +19,7 @@ export const Header: React.FC = () => {
           href="https://github.com/LuanEdCosta"
           referrerPolicy="no-referrer"
           target="_blank"
+          rel="noreferrer"
         >
           Luan Eduardo da Costa
         </a>
