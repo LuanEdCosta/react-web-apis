@@ -6,5 +6,8 @@
   "testEnvironment": "jsdom",
   "coverageDirectory": "coverage",
   "setupFilesAfterEnv": ["<rootDir>/setupTests.ts"],
-  "moduleDirectories": ["node_modules", "<rootDir>/node_modules", "."]
+  "moduleDirectories": ["node_modules", "<rootDir>/node_modules", "."],
+  "moduleNameMapper": {
+    "src/(.*)": "<rootDir>/src/$1"
+  }
 }

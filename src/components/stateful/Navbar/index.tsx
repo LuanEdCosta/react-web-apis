@@ -1,8 +1,11 @@
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { FiArrowLeft, FiGlobe, FiSun, FiMoon, FiGithub } from 'react-icons/fi'
 
 import { Button, IconButton } from 'src/components'
+import { APP_THEMES } from 'src/configs'
+import { useTheme } from 'src/hooks'
 export interface NavbarProps {
   className?: string
   showBackButton?: boolean
@@ -15,19 +18,24 @@ export const Navbar: React.FC<NavbarProps> = ({
   const { t } = useTranslation('Common')
   const navigate = useNavigate()
 
+  const { handleToggleTheme, handleGetCurrentTheme } = useTheme()
+
+  const [isDarkMode, setIsDarkMode] = useState(
+    handleGetCurrentTheme() === APP_THEMES.DARK,
+  )
+
   const handleGoBack = () => {
     navigate(-1)
   }
 
   const handleChangeTheme = () => {
-    // TODO
+    handleToggleTheme()
+    setIsDarkMode((isDark) => !isDark)
   }
 
   const handleChangeLanguage = () => {
     // TODO
   }
-
-  const isDarkMode = false
 
   return (
     <nav className={`flex items-center h-14 ${className}`}>

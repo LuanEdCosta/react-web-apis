@@ -1,0 +1,3 @@
+export enum LOCAL_STORAGE_KEYS {
+  THEME = '@REACT_WEB_APIS/THEME',
+}
