@@ -4,6 +4,8 @@ import { useTheme } from 'src/hooks'
 import { APP_THEMES, LOCAL_STORAGE_KEYS } from 'src/configs'
 
 describe('useTheme', () => {
+  beforeEach(() => localStorage.clear())
+
   it('should return the correct structure', () => {
     const { result } = renderHook(() => useTheme())
     expect(typeof result.current.handleToggleTheme).toBe('function')

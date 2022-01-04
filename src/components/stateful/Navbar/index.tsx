@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { FiArrowLeft, FiGlobe, FiSun, FiMoon, FiGithub } from 'react-icons/fi'
 
 import { Button, IconButton } from 'src/components'
-import { APP_THEMES } from 'src/configs'
+import { APP_THEMES, LOCAL_STORAGE_KEYS } from 'src/configs'
 import { useTheme } from 'src/hooks'
 export interface NavbarProps {
   className?: string
@@ -15,7 +15,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   className,
   showBackButton = true,
 }) => {
-  const { t } = useTranslation('Common')
+  const { t, i18n } = useTranslation(['Common', 'Languages'])
   const navigate = useNavigate()
 
   const { handleToggleTheme, handleGetCurrentTheme } = useTheme()
@@ -33,8 +33,16 @@ export const Navbar: React.FC<NavbarProps> = ({
     setIsDarkMode((isDark) => !isDark)
   }
 
+  // * Change this implementation when have more than 2 languages
   const handleChangeLanguage = () => {
-    // TODO
+    const languages = Object.keys(i18n.options.resources || {})
+    const index = languages.findIndex((lang) => lang === i18n.language)
+    const nextIndex = index + 1
+    const newLangIndex = nextIndex >= languages.length ? 0 : nextIndex
+    const newLanguage = languages[newLangIndex]
+    i18n.changeLanguage(newLanguage, () => {
+      localStorage.setItem(LOCAL_STORAGE_KEYS.LANGUAGE, newLanguage)
+    })
   }
 
   return (
@@ -51,6 +59,14 @@ export const Navbar: React.FC<NavbarProps> = ({
       <div className="flex-1" />
 
       <div className="flex items-center space-x-2">
+        <Button
+          onClick={handleChangeLanguage}
+          data-testid="navbar-language-button"
+        >
+          <FiGlobe className="text-xl" />
+          <span className="ml-2">{t(`Languages:${i18n.language}`)}</span>
+        </Button>
+
         <a
           href="https://github.com/LuanEdCosta/react-web-apis"
           data-testid="navbar-github-button"
@@ -62,13 +78,6 @@ export const Navbar: React.FC<NavbarProps> = ({
             <FiGithub className="text-xl" />
           </IconButton>
         </a>
-
-        <IconButton
-          onClick={handleChangeLanguage}
-          data-testid="navbar-language-button"
-        >
-          <FiGlobe className="text-xl" />
-        </IconButton>
 
         <IconButton
           onClick={handleChangeTheme}
