@@ -1,7 +1,7 @@
 export type IconButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>
 
 export const IconButton: React.FC<IconButtonProps> = ({
-  className,
+  className = '',
   children,
   ...props
 }) => {

@@ -12,7 +12,7 @@ export interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
-  className,
+  className = '',
   showBackButton = true,
 }) => {
   const { t, i18n } = useTranslation(['Common', 'Languages'])
@@ -46,7 +46,9 @@ export const Navbar: React.FC<NavbarProps> = ({
   }
 
   return (
-    <nav className={`flex items-center h-14 ${className}`}>
+    <nav
+      className={`flex items-center h-14 px-8 border-b border-gray-300 dark:border-gray-600 transition-[border-color] ${className}`}
+    >
       <div className="flex-1">
         {showBackButton && (
           <Button onClick={handleGoBack} data-testid="navbar-back-button">
@@ -58,7 +60,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       <div className="flex-1" />
 
-      <div className="flex items-center space-x-2">
+      <div className="flex items-center space-x-2 transition-none">
         <Button
           onClick={handleChangeLanguage}
           data-testid="navbar-language-button"

@@ -7,7 +7,7 @@ export const HomeLinks: React.FC = () => {
   const { t } = useTranslation('Home')
 
   return (
-    <div className="max-w-7xl mx-auto mt-16">
+    <div className="mt-16">
       <div className="text-2xl font-black mb-4 flex items-center">
         <FiArrowDown />
         <span className="ml-2">{t('homeLinksTitle')}</span>
