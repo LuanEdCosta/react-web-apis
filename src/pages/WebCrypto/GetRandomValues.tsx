@@ -1,0 +1,114 @@
+import { useMemo, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+
+import { Button, Input, TextArea } from 'src/components'
+
+type TypedArrays = {
+  [key: string]: {
+    key: string
+    getInstance: (length: number) => any
+  }
+}
+
+const TYPED_ARRAYS: TypedArrays = {
+  Uint32Array: {
+    key: 'Uint32Array',
+    getInstance: (length: number) => new Uint32Array(length),
+  },
+  Int8Array: {
+    key: 'Int8Array',
+    getInstance: (length: number) => new Int8Array(length),
+  },
+  Uint8Array: {
+    key: 'Uint8Array',
+    getInstance: (length: number) => new Uint8Array(length),
+  },
+  Int16Array: {
+    key: 'Int16Array',
+    getInstance: (length: number) => new Int16Array(length),
+  },
+  Uint16Array: {
+    key: 'Uint16Array',
+    getInstance: (length: number) => new Uint16Array(length),
+  },
+  Int32Array: {
+    key: 'Int32Array',
+    getInstance: (length: number) => new Int32Array(length),
+  },
+}
+
+const MAX_TYPED_ARRAY_LENGTH = 10000
+
+export const GetRandomValues: React.FC = () => {
+  const { t } = useTranslation('WebCrypto', { keyPrefix: 'getRandomValues' })
+
+  const [typedArrayLength, setTypedArrayLength] = useState('1')
+
+  const [selectedTypedArray, setSelectedTypedArray] = useState(
+    TYPED_ARRAYS.Uint32Array.key,
+  )
+
+  const result: string = useMemo(() => {
+    const typedArray = TYPED_ARRAYS[selectedTypedArray]
+    if (!typedArray) return ''
+
+    let arrayLength = Number(typedArrayLength || '1')
+    const isNaN = Number.isNaN(arrayLength)
+    const isZero = arrayLength === 0
+    const isTooBig = arrayLength > MAX_TYPED_ARRAY_LENGTH
+    if (isNaN || isZero || isTooBig) arrayLength = MAX_TYPED_ARRAY_LENGTH
+
+    return window.crypto.getRandomValues(typedArray.getInstance(arrayLength))
+  }, [selectedTypedArray, typedArrayLength])
+
+  return (
+    <div>
+      <div className="text-3xl font-bold mb-8">{t('title')}</div>
+
+      <div className="flex flex-wrap items-stretch flex-col md:space-x-8 md:flex-row">
+        <div className="flex-1 mb-2">
+          <Input
+            min={1}
+            type="number"
+            className="w-full mb-4"
+            value={typedArrayLength}
+            placeholder={t('typedArrayLength')}
+            onChange={(e) => setTypedArrayLength(e.target.value)}
+          />
+
+          <div className="flex items-center flex-wrap">
+            {Object.values(TYPED_ARRAYS).map(({ key }) => {
+              const isSelected = key === selectedTypedArray
+              const selectedClass = isSelected
+                ? '!bg-purple-600 !text-white'
+                : ''
+
+              const handleSelectTypedArray = () => {
+                setSelectedTypedArray(key)
+              }
+
+              return (
+                <Button
+                  className={`dark:hover:bg-gray-700 mr-3 mb-3 ${selectedClass}`}
+                  key={key}
+                  onClick={handleSelectTypedArray}
+                >
+                  {key}
+                </Button>
+              )
+            })}
+          </div>
+        </div>
+
+        <div className="flex-1">
+          <TextArea
+            className="w-full resize-none"
+            value={result}
+            rows={5}
+            disabled
+          />
+        </div>
+      </div>
+    </div>
+  )
+}

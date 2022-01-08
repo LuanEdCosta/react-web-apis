@@ -8,10 +8,7 @@ import './styles.module.css'
 
 export const Home: React.FC = () => {
   return (
-    <PageLayout
-      navbar={<Navbar showBackButton={false} />}
-      contentClassName="mx-auto"
-    >
+    <PageLayout navbar={<Navbar showBackButton={false} />}>
       <Header />
       <HomeLinks />
     </PageLayout>
