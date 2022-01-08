@@ -1,7 +1,10 @@
+export * from './dumb/Hint'
+export * from './dumb/Error'
 export * from './dumb/Input'
 export * from './dumb/Button'
 export * from './dumb/TextArea'
 export * from './dumb/IconButton'
+export * from './dumb/FormControl'
 
 export * from './stateful/Navbar'
 export * from './stateful/APINotSupported'

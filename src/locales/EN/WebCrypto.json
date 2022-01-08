@@ -2,6 +2,8 @@
   "title": "Web Crypto",
   "getRandomValues": {
     "title": "getRandomValues(TypedArray)",
-    "typedArrayLength": "Typed Array Length"
+    "typedArrayLength": "Typed Array Length",
+    "hint": "A number from {{min}} to {{max}}",
+    "invalidLengthError": "The length is invalid. Using 1 as default."
   }
 }

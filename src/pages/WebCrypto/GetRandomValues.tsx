@@ -1,7 +1,14 @@
 import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { Button, Input, TextArea } from 'src/components'
+import {
+  Button,
+  Error,
+  FormControl,
+  Hint,
+  Input,
+  TextArea,
+} from 'src/components'
 
 type TypedArrays = {
   [key: string]: {
@@ -48,18 +55,21 @@ export const GetRandomValues: React.FC = () => {
     TYPED_ARRAYS.Uint32Array.key,
   )
 
-  const result: string = useMemo(() => {
-    const typedArray = TYPED_ARRAYS[selectedTypedArray]
-    if (!typedArray) return ''
-
-    let arrayLength = Number(typedArrayLength || '1')
+  const isTypedArrayLengthInvalid = useMemo(() => {
+    if (!typedArrayLength) return true
+    const arrayLength = Number(typedArrayLength)
     const isNaN = Number.isNaN(arrayLength)
     const isZero = arrayLength === 0
     const isTooBig = arrayLength > MAX_TYPED_ARRAY_LENGTH
-    if (isNaN || isZero || isTooBig) arrayLength = MAX_TYPED_ARRAY_LENGTH
+    return isNaN || isZero || isTooBig
+  }, [typedArrayLength])
 
+  const result: string = useMemo(() => {
+    const typedArray = TYPED_ARRAYS[selectedTypedArray]
+    if (!typedArray) return ''
+    const arrayLength = isTypedArrayLengthInvalid ? 1 : Number(typedArrayLength)
     return window.crypto.getRandomValues(typedArray.getInstance(arrayLength))
-  }, [selectedTypedArray, typedArrayLength])
+  }, [isTypedArrayLengthInvalid, selectedTypedArray, typedArrayLength])
 
   return (
     <div>
@@ -67,14 +77,27 @@ export const GetRandomValues: React.FC = () => {
 
       <div className="flex flex-wrap items-stretch flex-col md:space-x-8 md:flex-row">
         <div className="flex-1 mb-2">
-          <Input
-            min={1}
-            type="number"
-            className="w-full mb-4"
-            value={typedArrayLength}
-            placeholder={t('typedArrayLength')}
-            onChange={(e) => setTypedArrayLength(e.target.value)}
-          />
+          <FormControl
+            className="mb-4"
+            label={
+              <label htmlFor="typedArrayLength">{t('typedArrayLength')}</label>
+            }
+            hint={
+              <Hint>{t('hint', { min: 1, max: MAX_TYPED_ARRAY_LENGTH })}</Hint>
+            }
+            error={<Error>{t('invalidLengthError')}</Error>}
+            showError={isTypedArrayLengthInvalid}
+          >
+            <Input
+              min={1}
+              type="number"
+              className="w-full"
+              id="typedArrayLength"
+              value={typedArrayLength}
+              placeholder={t('typedArrayLength')}
+              onChange={(e) => setTypedArrayLength(e.target.value)}
+            />
+          </FormControl>
 
           <div className="flex items-center flex-wrap">
             {Object.values(TYPED_ARRAYS).map(({ key }) => {
@@ -104,7 +127,7 @@ export const GetRandomValues: React.FC = () => {
           <TextArea
             className="w-full resize-none"
             value={result}
-            rows={5}
+            rows={7}
             disabled
           />
         </div>
