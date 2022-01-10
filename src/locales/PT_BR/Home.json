@@ -2,19 +2,5 @@
   "title": "React Web APIs",
   "subtitle": "Testando as APIs da Web Com React + TypeScript + Tailwind + Parcel",
   "createdBy": "Criado Por:",
-  "homeLinksTitle": "Links de Navegação",
-  "homeLinks": {
-    "pageVisibility": {
-      "title": "Page Visibility",
-      "subtitle": "A API de visibilidade da página permite que você saiba quando um documento se torna visível ou oculto, bem como recursos para observar o estado de visibilidade atual da página."
-    },
-    "resizeObserver": {
-      "title": "Resize Observer",
-      "subtitle": "A API Resize Observer fornece um mecanismo de desempenho por meio do qual o código pode monitorar um elemento quanto a alterações em seu tamanho."
-    },
-    "webCrypto": {
-      "title": "Web Crypto",
-      "subtitle": "A API Web Crypto é uma interface que permite um script usar primitivas criptográficas para construir sistemas usando criptografia."
-    }
-  }
+  "linksTitle": "Links de Navegação"
 }

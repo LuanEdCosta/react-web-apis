@@ -1,5 +1,4 @@
 {
-  "title": "Web Crypto",
   "getRandomValues": {
     "title": "getRandomValues(TypedArray)",
     "typedArrayLength": "Typed Array Length",
