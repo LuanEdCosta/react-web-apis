@@ -73,7 +73,7 @@ export const GetRandomValues: React.FC = () => {
 
   return (
     <div>
-      <div className="text-3xl font-bold mb-8">{t('title')}</div>
+      <div className="text-xl xl:text-3xl font-bold mb-8">{t('title')}</div>
 
       <div className="flex flex-wrap items-stretch flex-col md:space-x-8 md:flex-row">
         <div className="flex-1 mb-2">
@@ -102,9 +102,10 @@ export const GetRandomValues: React.FC = () => {
           <div className="flex items-center flex-wrap">
             {Object.values(TYPED_ARRAYS).map(({ key }) => {
               const isSelected = key === selectedTypedArray
-              const selectedClass = isSelected
-                ? '!bg-purple-600 !text-white'
-                : ''
+
+              const selectionClass = isSelected
+                ? '!bg-purple-600 dark:hover:bg-purple-600 !text-white'
+                : 'dark:hover:!bg-gray-800'
 
               const handleSelectTypedArray = () => {
                 setSelectedTypedArray(key)
@@ -112,7 +113,7 @@ export const GetRandomValues: React.FC = () => {
 
               return (
                 <Button
-                  className={`dark:hover:bg-gray-700 mr-3 mb-3 ${selectedClass}`}
+                  className={`mr-3 mb-3 ${selectionClass}`}
                   key={key}
                   onClick={handleSelectTypedArray}
                 >
