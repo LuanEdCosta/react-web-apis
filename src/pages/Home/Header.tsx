@@ -1,6 +1,8 @@
 import { useTranslation } from 'react-i18next'
 import { FaReact } from 'react-icons/fa'
 
+import { ExternalLink } from 'src/components'
+
 export const Header: React.FC = () => {
   const { t } = useTranslation(['Home'])
 
@@ -17,15 +19,9 @@ export const Header: React.FC = () => {
       <div className="text-gray-600 dark:text-gray-400">
         <span className="mr-1">{t('createdBy')}</span>
 
-        <a
-          className="text-purple-600 dark:text-purple-400 underline"
-          href="https://github.com/LuanEdCosta"
-          referrerPolicy="no-referrer"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <ExternalLink href="https://github.com/LuanEdCosta">
           Luan Eduardo da Costa
-        </a>
+        </ExternalLink>
       </div>
     </header>
   )

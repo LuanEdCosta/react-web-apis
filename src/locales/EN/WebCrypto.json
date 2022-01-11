@@ -1,6 +1,7 @@
 {
   "getRandomValues": {
     "title": "getRandomValues(TypedArray)",
+    "subtitle": "The Crypto.getRandomValues() method lets you get cryptographically strong random values.",
     "typedArrayLength": "Typed Array Length",
     "hint": "A number from {{min}} to {{max}}",
     "invalidLengthError": "The length is invalid. Using 1 as default."

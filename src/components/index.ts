@@ -6,6 +6,8 @@ export * from './dumb/TextArea'
 export * from './dumb/PageHeader'
 export * from './dumb/IconButton'
 export * from './dumb/FormControl'
+export * from './dumb/ExternalLink'
+export * from './dumb/SectionHeader'
 
 export * from './stateful/Navbar'
 export * from './stateful/APINotSupported'

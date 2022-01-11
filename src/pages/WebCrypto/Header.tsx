@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { FiExternalLink } from 'react-icons/fi'
 
-import { PageHeader, Button } from 'src/components'
+import { PageHeader, Button, ExternalLink } from 'src/components'
 import { LINKS } from './Links'
 
 export const Header: React.FC = () => {
@@ -13,17 +13,12 @@ export const Header: React.FC = () => {
       title={t('webCrypto.title')}
       subtitle={t('webCrypto.subtitle')}
     >
-      <a
-        href={LINKS.DOCS}
-        target="_blank"
-        rel="noreferrer"
-        referrerPolicy="no-referrer"
-      >
+      <ExternalLink href={LINKS.DOCS} noStyles>
         <Button>
           <span className="mr-2">{t('Glossary:docs')}</span>
           <FiExternalLink />
         </Button>
-      </a>
+      </ExternalLink>
     </PageHeader>
   )
 }

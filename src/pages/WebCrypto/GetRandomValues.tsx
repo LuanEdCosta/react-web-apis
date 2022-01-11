@@ -8,7 +8,10 @@ import {
   Hint,
   Input,
   TextArea,
+  SectionHeader,
+  ExternalLink,
 } from 'src/components'
+import { LINKS } from './Links'
 
 type TypedArrays = {
   [key: string]: {
@@ -47,7 +50,11 @@ const TYPED_ARRAYS: TypedArrays = {
 const MAX_TYPED_ARRAY_LENGTH = 10000
 
 export const GetRandomValues: React.FC = () => {
-  const { t } = useTranslation('WebCrypto', { keyPrefix: 'getRandomValues' })
+  const { t } = useTranslation('WebCrypto', {
+    keyPrefix: 'getRandomValues',
+  })
+
+  const { t: t1 } = useTranslation('Common')
 
   const [typedArrayLength, setTypedArrayLength] = useState('1')
 
@@ -73,7 +80,22 @@ export const GetRandomValues: React.FC = () => {
 
   return (
     <div>
-      <div className="text-xl xl:text-3xl font-bold mb-8">{t('title')}</div>
+      <SectionHeader
+        className="mb-8"
+        titleClassName="break-all"
+        title={t('title')}
+        anchor="getRandomValues"
+        subtitle={
+          <>
+            <span>{t('subtitle')}</span>
+            &nbsp;
+            <ExternalLink href={LINKS.GET_RANDOM_VALUES}>
+              {t1('knowMoreAbout')}
+            </ExternalLink>
+            <span>.</span>
+          </>
+        }
+      />
 
       <div className="flex flex-wrap items-stretch flex-col md:space-x-8 md:flex-row">
         <div className="flex-1 mb-2">
