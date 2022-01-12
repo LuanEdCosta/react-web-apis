@@ -1,3 +1,12 @@
+import { PageLayout } from 'src/layout'
+import { Navbar } from 'src/components'
+
+import { Header } from './Header'
+
 export const ResizeObserver: React.FC = () => {
-  return <div>Resize Observer</div>
+  return (
+    <PageLayout navbar={<Navbar />}>
+      <Header />
+    </PageLayout>
+  )
 }
