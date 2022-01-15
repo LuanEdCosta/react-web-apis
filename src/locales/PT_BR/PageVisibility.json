@@ -1,0 +1,7 @@
+{
+  "visibilityChange": {
+    "title": "Evento VisibilityChange",
+    "subtitle": "Este evento é acionado no documento quando o conteúdo de sua guia se torna visível ou fica oculto.",
+    "explanation": "Mude de guia para ver os estados de visibilidade abaixo."
+  }
+}

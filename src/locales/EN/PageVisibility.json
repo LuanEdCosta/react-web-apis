@@ -1,0 +1,7 @@
+{
+  "visibilityChange": {
+    "title": "VisibilityChange Event",
+    "subtitle": "This event is fired at the document when the contents of its tab have become visible or have been hidden.",
+    "explanation": "Switch tabs to see the visibility states below."
+  }
+}
