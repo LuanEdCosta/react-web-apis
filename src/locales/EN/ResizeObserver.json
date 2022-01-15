@@ -1,0 +1,7 @@
+{
+  "resizeObserverClass": {
+    "title": "ResizeObserver Class",
+    "subtitle": "Creates a ResizeObserver object to report changes to the content or border box of an Element or the bounding box of an SVGElement.",
+    "elementText": "Resize the page to change the color"
+  }
+}

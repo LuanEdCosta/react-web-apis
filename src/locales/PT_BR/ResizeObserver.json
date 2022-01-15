@@ -1,0 +1,7 @@
+{
+  "resizeObserverClass": {
+    "title": "Classe ResizeObserver",
+    "subtitle": "Cria um objeto ResizeObserver para relatar alterações no conteúdo ou na caixa de borda de um Element ou na caixa delimitadora de um SVGElement.",
+    "elementText": "Redimensione a página para mudar a cor"
+  }
+}
