@@ -5,5 +5,10 @@
     "typedArrayLength": "Tamanho do TypedArray",
     "hint": "Um número de {{min}} a {{max}}",
     "invalidLengthError": "O tamanho do array é inválido. Usando 1 por padrão."
+  },
+  "randomUUID": {
+    "title": "randomUUID()",
+    "subtitle": "Gera um UUID v4 usando um gerador de números aleatórios criptograficamente seguro.",
+    "generateButton": "Gerar UUID"
   }
 }

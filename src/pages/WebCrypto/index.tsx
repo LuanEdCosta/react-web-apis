@@ -3,6 +3,7 @@ import { APINotSupported, Navbar } from 'src/components'
 
 import { LINKS } from './Links'
 import { Header } from './Header'
+import { RandomUUID } from './RandomUUID'
 import { GetRandomValues } from './GetRandomValues'
 
 export const WebCrypto: React.FC = () => {
@@ -16,7 +17,10 @@ export const WebCrypto: React.FC = () => {
         isAPISupported={isAPISupported}
         compatibilityLink={LINKS.COMPATIBILITY}
       >
-        <GetRandomValues />
+        <div className="flex flex-col space-y-8">
+          <GetRandomValues />
+          <RandomUUID />
+        </div>
       </APINotSupported>
     </PageLayout>
   )

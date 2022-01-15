@@ -5,5 +5,10 @@
     "typedArrayLength": "Typed Array Length",
     "hint": "A number from {{min}} to {{max}}",
     "invalidLengthError": "The length is invalid. Using 1 as default."
+  },
+  "randomUUID": {
+    "title": "randomUUID()",
+    "subtitle": "Generates a v4 UUID using a cryptographically secure random number generator.",
+    "generateButton": "Generate UUID"
   }
 }

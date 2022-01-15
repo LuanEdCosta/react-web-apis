@@ -6,4 +6,7 @@ export const LINKS = {
 
   GET_RANDOM_VALUES:
     'https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues',
+
+  RANDOM_UUID:
+    'https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID',
 }
