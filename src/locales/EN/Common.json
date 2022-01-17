@@ -1,4 +1,7 @@
 {
   "goBack": "Go Back",
-  "knowMoreAbout": "Know more about"
+  "knowMoreAbout": "Know more about",
+  "tryAgain": "Try Again",
+  "someErrorOcurred": "Some Error Ocurred",
+  "createIssue": "Create an Issue"
 }

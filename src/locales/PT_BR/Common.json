@@ -1,4 +1,7 @@
 {
   "goBack": "Voltar",
-  "knowMoreAbout": "Saiba mais"
+  "knowMoreAbout": "Saiba mais",
+  "tryAgain": "Tentar Novamente",
+  "someErrorOcurred": "Ocorreu um Erro",
+  "createIssue": "Criar uma Issue"
 }

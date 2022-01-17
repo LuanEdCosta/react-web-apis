@@ -11,3 +11,4 @@ export * from './dumb/SectionHeader'
 
 export * from './stateful/Navbar'
 export * from './stateful/APINotSupported'
+export * from './stateful/AppErrorBoundary'

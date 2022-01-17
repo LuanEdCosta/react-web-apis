@@ -3,9 +3,13 @@ import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { FiArrowLeft, FiGlobe, FiSun, FiMoon, FiGithub } from 'react-icons/fi'
 
-import { Button, IconButton } from 'src/components'
-import { APP_THEMES, LOCAL_STORAGE_KEYS } from 'src/configs'
 import { useTheme } from 'src/hooks'
+import { Button, IconButton } from 'src/components'
+import {
+  APP_THEMES,
+  LOCAL_STORAGE_KEYS,
+  GITHUB_REPOSITORY_LINKS,
+} from 'src/configs'
 export interface NavbarProps {
   className?: string
   showBackButton?: boolean
@@ -70,7 +74,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </Button>
 
         <a
-          href="https://github.com/LuanEdCosta/react-web-apis"
+          href={GITHUB_REPOSITORY_LINKS.REPOSITORY}
           data-testid="navbar-github-button"
           referrerPolicy="no-referrer"
           rel="noreferrer"
