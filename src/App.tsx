@@ -9,7 +9,7 @@ export const App = () => {
   useTheme().handleSetCurrentTheme()
 
   return (
-    <AppErrorBoundary>
+    <AppErrorBoundary isFullScreen>
       <AppRoutes />
     </AppErrorBoundary>
   )
