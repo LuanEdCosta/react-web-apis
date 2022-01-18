@@ -1,3 +1,4 @@
+import { useAnchorScroll } from 'src/hooks'
 import { AppErrorBoundary } from 'src/components'
 
 export interface PageLayoutProps {
@@ -12,6 +13,8 @@ export const PageLayout: React.FC<PageLayoutProps> = ({
   contentClassName = '',
   containerClassName = '',
 }) => {
+  useAnchorScroll()
+
   return (
     <div
       className={`min-h-screen bg-gray-50 dark:bg-gray-900 dark:text-white transition-[background] ${containerClassName}`}
