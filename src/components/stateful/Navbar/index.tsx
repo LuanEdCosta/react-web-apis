@@ -10,6 +10,7 @@ import {
   LOCAL_STORAGE_KEYS,
   GITHUB_REPOSITORY_LINKS,
 } from 'src/configs'
+
 export interface NavbarProps {
   className?: string
   showBackButton?: boolean
@@ -29,7 +30,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   )
 
   const handleGoBack = () => {
-    navigate(-1)
+    navigate('..')
   }
 
   const handleChangeTheme = () => {
