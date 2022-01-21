@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next'
+
 import { PageLayout } from 'src/layout'
 import { APINotSupported, Navbar } from 'src/components'
 
@@ -6,10 +8,11 @@ import { Header } from './Header'
 import { ResizeObserverClass } from './ResizeObserverClass'
 
 export const ResizeObserver: React.FC = () => {
+  const { t } = useTranslation('WebAPIs', { keyPrefix: 'resizeObserver' })
   const isAPISupported = typeof window.ResizeObserver !== 'undefined'
 
   return (
-    <PageLayout navbar={<Navbar />}>
+    <PageLayout navbar={<Navbar />} documentTitle={t('title')}>
       <Header />
 
       <APINotSupported

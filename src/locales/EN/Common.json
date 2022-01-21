@@ -3,5 +3,7 @@
   "knowMoreAbout": "Know more about",
   "tryAgain": "Try Again",
   "someErrorOcurred": "Some Error Ocurred",
-  "createIssue": "Create an Issue"
+  "createIssue": "Create an Issue",
+  "defaultDocumentTitle": "React Web APIs",
+  "documentTitle": "{{title}} - $t(defaultDocumentTitle)"
 }

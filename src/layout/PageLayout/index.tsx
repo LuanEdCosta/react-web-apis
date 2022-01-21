@@ -1,19 +1,31 @@
-import { useAnchorScroll } from 'src/hooks'
+import { useTranslation } from 'react-i18next'
+
+import { useAnchorScroll, useDocumentTitle } from 'src/hooks'
 import { AppErrorBoundary } from 'src/components'
 
 export interface PageLayoutProps {
   navbar?: React.ReactNode
-  containerClassName?: string
+  documentTitle?: string
   contentClassName?: string
+  containerClassName?: string
 }
 
 export const PageLayout: React.FC<PageLayoutProps> = ({
   navbar,
   children,
+  documentTitle,
   contentClassName = '',
   containerClassName = '',
 }) => {
+  const { t } = useTranslation('Common')
+
   useAnchorScroll()
+
+  useDocumentTitle(
+    documentTitle
+      ? t('documentTitle', { title: documentTitle })
+      : t('defaultDocumentTitle'),
+  )
 
   return (
     <div

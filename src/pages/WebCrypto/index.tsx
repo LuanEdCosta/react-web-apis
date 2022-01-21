@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next'
+
 import { PageLayout } from 'src/layout'
 import { APINotSupported, Navbar } from 'src/components'
 
@@ -7,10 +9,11 @@ import { RandomUUID } from './RandomUUID'
 import { GetRandomValues } from './GetRandomValues'
 
 export const WebCrypto: React.FC = () => {
+  const { t } = useTranslation('WebAPIs', { keyPrefix: 'webCrypto' })
   const isAPISupported = typeof window.crypto !== 'undefined'
 
   return (
-    <PageLayout navbar={<Navbar />}>
+    <PageLayout navbar={<Navbar />} documentTitle={t('title')}>
       <Header />
 
       <APINotSupported

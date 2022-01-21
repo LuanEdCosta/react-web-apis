@@ -4,14 +4,17 @@ import { APINotSupported, Navbar } from 'src/components'
 import { LINKS } from './Links'
 import { Header } from './Header'
 import { VisibilityChange } from './VisibilityChange'
+import { useTranslation } from 'react-i18next'
 
 export const PageVisibility: React.FC = () => {
+  const { t } = useTranslation('WebAPIs', { keyPrefix: 'pageVisibility' })
+
   const isAPISupported =
     typeof document.visibilityState !== 'undefined' &&
     typeof document.onvisibilitychange !== 'undefined'
 
   return (
-    <PageLayout navbar={<Navbar />}>
+    <PageLayout navbar={<Navbar />} documentTitle={t('title')}>
       <Header />
 
       <APINotSupported
