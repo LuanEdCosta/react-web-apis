@@ -20,7 +20,7 @@
     "serve": "serve dist",
     "build": "parcel build",
     "clean": "rimraf .parcel-cache dist",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "predeploy": "yarn clean && yarn build",
     "eslint:lint": "eslint src --ext .js,.jsx,.ts,.tsx",
     "eslint:fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix"
