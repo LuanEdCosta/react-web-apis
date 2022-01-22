@@ -4,7 +4,7 @@ import { Home, WebCrypto, PageVisibility, ResizeObserver } from 'src/pages'
 
 export const AppRoutes = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Navigate to="/" />} />
