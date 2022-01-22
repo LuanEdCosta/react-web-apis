@@ -34,7 +34,7 @@ export const PageLayout: React.FC<PageLayoutProps> = ({
       {navbar}
 
       <AppErrorBoundary>
-        <div className={`p-8 max-w-7xl mx-auto ${contentClassName}`}>
+        <div className={`p-4 sm:p-8 max-w-7xl mx-auto ${contentClassName}`}>
           {children}
         </div>
       </AppErrorBoundary>

@@ -35,7 +35,7 @@ export const RandomUUID: React.FC = () => {
       />
 
       <div className="flex flex-wrap items-stretch flex-col md:space-x-8 md:flex-row">
-        <div className="flex items-center justify-center flex-1 mb-2">
+        <div className="flex items-center justify-center flex-1 mb-4">
           <Button
             className="border border-purple-400 dark:border-purple-600 text-purple-600"
             onClick={handleGenerateUUID}

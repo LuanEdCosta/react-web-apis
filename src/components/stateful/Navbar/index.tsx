@@ -52,13 +52,13 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <nav
-      className={`flex items-center h-14 px-8 border-b border-gray-300 dark:border-gray-600 transition-[border-color] ${className}`}
+      className={`flex items-center h-14 px-4 sm:px-8 border-b border-gray-300 dark:border-gray-600 transition-[border-color] ${className}`}
     >
       <div className="flex-1">
         {showBackButton && (
           <Button onClick={handleGoBack} data-testid="navbar-back-button">
             <FiArrowLeft />
-            <span className="ml-2">{t('goBack')}</span>
+            <span className="ml-2 whitespace-nowrap">{t('goBack')}</span>
           </Button>
         )}
       </div>
@@ -67,11 +67,24 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       <div className="flex items-center space-x-2 transition-none">
         <Button
+          className="hidden sm:flex"
           onClick={handleChangeLanguage}
           data-testid="navbar-language-button"
         >
           <FiGlobe className="text-xl" />
-          <span className="ml-2">{t(`Languages:${i18n.language}`)}</span>
+          <span className="ml-2 whitespace-nowrap">
+            {t(`Languages:${i18n.language}`)}
+          </span>
+        </Button>
+
+        <Button
+          className="sm:hidden"
+          onClick={handleChangeLanguage}
+          data-testid="navbar-language-button-responsive"
+        >
+          <span className="uppercase text-xs whitespace-nowrap">
+            {i18n.language}
+          </span>
         </Button>
 
         <a

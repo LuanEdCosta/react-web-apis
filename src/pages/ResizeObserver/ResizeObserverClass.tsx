@@ -52,7 +52,7 @@ export const ResizeObserverClass: React.FC = () => {
       />
 
       <div
-        className={`h-32 w-full rounded-xl flex items-center justify-center font-bold text-xl text-white ${elementColor}`}
+        className={`h-32 w-full rounded-xl flex items-center justify-center font-bold text-xl text-white p-4 ${elementColor}`}
       >
         {t('elementText')}
       </div>

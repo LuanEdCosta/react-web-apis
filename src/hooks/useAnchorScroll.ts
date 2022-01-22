@@ -11,8 +11,6 @@ export const useAnchorScroll = (): void => {
         const anchorElement = document.querySelector(anchorSelector)
         anchorElement?.scrollIntoView({ behavior: 'smooth' })
       }, 0)
-    } else {
-      window.scrollTo(0, 0)
     }
   }, [hash, pathname])
 }
