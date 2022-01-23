@@ -7,7 +7,7 @@ export interface FormControlProps {
 }
 
 export const FormControl: React.FC<FormControlProps> = ({
-  className,
+  className = '',
   children,
   error,
   label,

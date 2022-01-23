@@ -6,8 +6,8 @@ export interface PageHeaderProps {
 }
 
 export const PageHeader: React.FC<PageHeaderProps> = ({
-  className,
-  childrenClassName,
+  className = '',
+  childrenClassName = '',
   title,
   subtitle,
   children,

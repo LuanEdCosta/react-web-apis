@@ -11,8 +11,8 @@ export interface SectionHeaderProps {
 }
 
 export const SectionHeader: React.FC<SectionHeaderProps> = ({
-  className,
-  titleClassName,
+  className = '',
+  titleClassName = '',
   anchor,
   title,
   subtitle,

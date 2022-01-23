@@ -7,14 +7,14 @@ export interface ExternalLinkProps {
 const styles = 'text-purple-600 dark:text-purple-400 hover:underline'
 
 export const ExternalLink: React.FC<ExternalLinkProps> = ({
-  className,
+  className = '',
   children,
   href,
   noStyles = false,
 }) => {
   return (
     <a
-      className={`${noStyles ? '' : styles} ${className}`}
+      className={`${noStyles ? '' : styles} ${className}`.trim()}
       href={href}
       target="_blank"
       rel="noreferrer"
