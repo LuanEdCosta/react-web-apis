@@ -1,10 +1,10 @@
-import { HashRouter, Route, Routes, Navigate } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 
 import { Home, WebCrypto, PageVisibility, ResizeObserver } from 'src/pages'
 
 export const AppRoutes = () => {
   return (
-    <HashRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Navigate to="/" />} />
@@ -12,6 +12,6 @@ export const AppRoutes = () => {
         <Route path="/page-visibility" element={<PageVisibility />} />
         <Route path="/resize-observer" element={<ResizeObserver />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   )
 }
