@@ -2,7 +2,7 @@
 
 Website for testing Web APIs with React.
 
-:point_right: [CLICK HERE TO SEE IT RUNNING IN YOUR BROWSER](https://luanedcosta.github.io/react-web-apis/)
+:point_right: [CLICK HERE TO SEE IT RUNNING](https://luanedcosta.github.io/react-web-apis/)
 
 ## :ok_hand: Tested Web APIs
 
