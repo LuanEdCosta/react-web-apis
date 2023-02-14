@@ -31,7 +31,7 @@ yarn dev
 
 Read [CONTRIBUTING.md](/CONTRIBUTING.md) to see how to contribute with this project.
 
-_Every contribution is appreciated ❤️_
+**Every contribution** is appreciated ❤️
 
 ## :man: Author
 
